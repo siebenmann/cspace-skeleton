@@ -1,0 +1,77 @@
+This is a more or less current set of DWiki[1] templates and starter
+pages for my techblog Wandering Thoughts[2] and the overall wiki
+(CSpace[3]) that it lives in. I've put together this Git repo of them
+because the tricks of DWiki's template syntax and assorted renderers
+are not exactly clearly documented, so it's not clear how I'm getting
+certain effects on CSpace or how to do things yourself. These will
+hopefully serve as a useful example.
+
+(At some point DWiki's template syntax may acquire comments of some
+sort, which will help.)
+
+In general, please feel free to adopt the design aesthetic and style
+of all of this. Note that the core of this is not actually all that
+modern and CSS-ized and flexible; the core layout is a table (with
+somewhat hardcoded proportions).
+
+These templates may require a current version of DWiki's source.
+You should make sure you're up to date on the code (and the core
+templates, although they rarely change) before you adopt these
+into your DWiki instance.
+
+Where the customizations are:
+- templates/struct/breadcrumbs: I added a link to my main (non-dwiki)
+  home page at the start of the page breadcrumbs.
+
+- templates/Overrides/blog: where all of the specific Wandering
+  Thoughts magic happens. Three of these override general templates
+  (blog.tmpl, all.tmpl, blogentry.tmpl); the remainder are used by them.
+
+- pages/blog: I've included the collection of administrative files.
+  __readme is the wikitext for the blog sidebar, which you will want
+  to modify (unless you want a blog sidebar that talks about me for
+  some reason). This also refers to an 'AboutBlog' page in the page
+  root, which I will let you write for yourself.
+
+- Aliases/WanderingThoughts: makes 'WanderingThoughts' a wikiword.
+
+As with the main DWiki codebase itself, you probably want to reset
+the timestamps on the templates and the pages with 'make postget'.
+If you've changed or added templates or pages, do 'make precommit'
+to update the timestamps before you commit to git.
+
+An incomplete list of tricks to note:
+- __readme is injected through Overrides/blog/readme-dir.tmpl ->
+  struct/readme-dir.tmpl -> the inject::upreadme renderer.
+
+- getting the blog name into the 'Wandering Thoughts: Recent Entries'
+  page header is accomplished by the simple method of hardcoding it
+  and the HTML URL to it in Overrides/blog/blog.tmpl.
+
+- Overrides/blog/blogrange.tmpl uses a conditional renderer to only
+  show a calendar bar if you are not on the blog's front page.
+
+Unfortunately really doing crazy things with templates and renderers
+requires a fair degree of familiarity with the actual renderers (a
+number of which are not well documented; please feel free to point those
+out).
+
+1: https://github.com/siebenmann/dwiki/
+2: http://utcc.utoronto.ca/~cks/space/blog/
+3: http://utcc.utoronto.ca/~cks/space/
+
+== A very brief tour of how it works
+
+Some of the following discussion assumes that you've read at least
+something about DWiki's general template syntax and template usage
+at
+	http://utcc.utoronto.ca/~cks/space/dwiki/TemplateSyntax
+	http://utcc.utoronto.ca/~cks/space/dwiki/TemplatesUsed
+(or in test/pages/dwiki/TemplateSyntax and TemplatesUsed in your DWiki
+Git repo).
+
+The standard templates blog/blogentry.tmpl and dwiki/overrides.tmpl
+(used from dwiki.tmpl) look for page or directory-hierarchy specific
+override templates in Overrides. The three override templates in
+Overrides/blog/ will thus get used for all directory and page display
+for stuff under pages/blog/ (the blog/ page directory).

@@ -1,0 +1,12 @@
+<h1> <a href="/~cks/space/blog/">Wandering Thoughts</a>: Recent Entries #{blog/entfor.tmpl} </h1>
+#{blog/categories.tmpl}
+<!-- Bug: should be real CSS, not inline styles -->
+<table border=0> <tr>
+<td width="76%" align=left valign=top style="padding-right: 1.5em;"> 
+	#{|blog/blog-index.tmpl|blog/blog-show.tmpl}
+</td>
+<td align=left valign=top width="24%" style="padding-left: 0.5em; border-left: 1px dotted;">
+	#{Overrides/blog/sidebar.tmpl}
+</td>
+</tr> </table>
+#{Overrides/blog/seemore.tmpl}#{Overrides/blog/blogrange.tmpl}
