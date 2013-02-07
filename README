@@ -51,6 +51,14 @@ An incomplete list of tricks to note:
 - Overrides/blog/blogrange.tmpl uses a conditional renderer to only
   show a calendar bar if you are not on the blog's front page.
 
+- although it's not captured in this repo currently, Wandering Thoughts
+  forces a blog view by having a pages/blog/.flag.prefview:blog file
+  (it's used purely as a flag file, the contents don't matter).
+  See pages/dwiki/NewFeatures/DefaultDirViews for more information.
+- similarly, blogdir view is blocked by having a '.flag.noview:blogdir'
+  in pages/blog/ and every subdirectory.
+  (See pages/dwiki/NewFeatures/DisallowDirViews for commentary)
+
 Unfortunately really doing crazy things with templates and renderers
 requires a fair degree of familiarity with the actual renderers (a
 number of which are not well documented; please feel free to point those
