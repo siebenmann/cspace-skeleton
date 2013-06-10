@@ -51,6 +51,11 @@ An incomplete list of tricks to note:
 - Overrides/blog/blogrange.tmpl uses a conditional renderer to only
   show a calendar bar if you are not on the blog's front page.
 
+- Overrides/blog/datecrumbs.tmpl contains a single space to make the
+  standard untitled 'previous/next' links disappear; this is because
+  we override them with a custom rendering that inserts titled links
+  in a different place in the page.
+
 - although it's not captured in this repo currently, Wandering Thoughts
   forces a blog view by having a pages/blog/.flag.prefview:blog file
   (it's used purely as a flag file, the contents don't matter).
