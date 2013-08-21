@@ -1,4 +1,3 @@
-@1118561065 templates/struct/breadcrumbs
 @1118695442 templates/Overrides/blog/blogentry.tmpl
 @1138168747 templates/Overrides/blog/sidebar.tmpl
 @1360008127 templates/Overrides/blog/blogrange-range.tmpl
@@ -11,3 +10,4 @@
 @1369667062 templates/Overrides/blog/blog.tmpl
 @1369667175 templates/Overrides/blog/all.tmpl
 @1370447065 templates/Overrides/blog/bits/prevnext.tmpl
+@1377109495 templates/Overrides/breadcrumbs-prefix

@@ -20,8 +20,8 @@ templates, although they rarely change) before you adopt these
 into your DWiki instance.
 
 Where the customizations are:
-- templates/struct/breadcrumbs: I added a link to my main (non-dwiki)
-  home page at the start of the page breadcrumbs.
+- templates/Overrides/breadcrumbs-prefix: I shim in a link to my main
+  (non-dwiki) home page at the start of the page breadcrumbs.
 
 - templates/Overrides/blog: where all of the specific Wandering
   Thoughts magic happens. Three of these override general templates
